@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-<b>This application is a online Text Editor, where users can create and edit markdown files.</b>
+<b>This application is a online Text Editor, where users can create and edit markdown files..</b>
 </p>
 
 <p align="center">

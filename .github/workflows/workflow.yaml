@@ -17,3 +17,18 @@ jobs:
           npm install
           npm run build 
           npm run test
+
+      - name: Setup Infracost
+        uses: infracost/actions/setup@v2
+        with:
+          api-key: ${{ secrets.INFRACOST_API_KEY }}
+
+      - name: Run Infracost breakdown
+        run: |
+          infracost breakdown --path=path/home/diego/text-editor/main.tfe --format=json --out-file=/tmp/infracost.json
+
+      - name: Post Infracost comment
+        uses: infracost/actions/comment@v2
+        with:
+          path: /tmp/infracost.json
+          behavior: update 
